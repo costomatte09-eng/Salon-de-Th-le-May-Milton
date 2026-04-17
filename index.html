@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <!-- ============================================================
+       META DE BASE
+       ⚠️  Remplacer "https://www.lemaymilton.fr" par le vrai domaine
+           dès que le client l'a choisi (canonical + OG + Schema)
+       ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le May Milton — Restaurant &amp; Salon de Thé | Albi</title>
+  <meta name="description" content="Restaurant et salon de thé au pied de la Cathédrale Sainte-Cécile d'Albi. Cuisine française 100% faite maison, produits frais et de saison. Réservation en ligne.">
+  <link rel="canonical" href="https://www.lemaymilton.fr/">
+
+  <!-- ============================================================
+       OPEN GRAPH (réseaux sociaux, partages)
+       ============================================================ -->
+  <meta property="og:type"        content="restaurant">
+  <meta property="og:title"       content="Le May Milton — Restaurant &amp; Salon de Thé | Albi">
+  <meta property="og:description" content="Cuisine française 100% faite maison au pied de la Cathédrale Sainte-Cécile d'Albi. Réservez votre table en ligne.">
+  <meta property="og:url"         content="https://www.lemaymilton.fr/">
+  <meta property="og:image"       content="https://www.lemaymilton.fr/images/facade.webp">
+  <meta property="og:locale"      content="fr_FR">
+  <meta property="og:site_name"   content="Le May Milton">
+
+  <!-- ============================================================
+       TWITTER CARD
+       ============================================================ -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Le May Milton — Restaurant &amp; Salon de Thé | Albi">
+  <meta name="twitter:description" content="Cuisine française 100% faite maison au pied de la Cathédrale Sainte-Cécile d'Albi.">
+  <meta name="twitter:image"       content="https://www.lemaymilton.fr/images/facade.webp">
+
+  <!-- ============================================================
+       POLICES — Google Fonts
+       Montserrat (titres) + Lato (corps)
+       preconnect non-bloquant + font-display:swap via CSS
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Lato:wght@300;400;700&display=swap"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Lato:wght@300;400;700&display=swap">
+  </noscript>
+
+  <!-- ============================================================
+       PRELOAD IMAGE LCP — façade (hero)
+       fetchpriority="high" sur l'img en bas + preload ici
+       ============================================================ -->
+  <link rel="preload" as="image" href="images/facade.webp">
+
+  <!-- ============================================================
+       SCHEMA.ORG — LocalBusiness / Restaurant
+       Utilisé par Google pour les résultats enrichis
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Le May Milton",
+    "description": "Restaurant et salon de thé au pied de la Cathédrale Sainte-Cécile d'Albi. Cuisine française 100% faite maison.",
+    "url": "https://www.lemaymilton.fr",
+    "telephone": "+33563436158",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4 Rue de la Temporalité",
+      "addressLocality": "Albi",
+      "postalCode": "81000",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.9278,
+      "longitude": 2.1476
+    },
+    "image": "https://www.lemaymilton.fr/images/facade.webp",
+    "priceRange": "€€",
+    "servesCuisine": "Française",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday","Wednesday","Sunday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "21:30"
+      }
+    ],
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Le+May+Milton+4+Rue+de+la+Temporalité+81000+Albi",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash, Credit Card, American Express, Chèque-Vacances",
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "WiFi gratuit",      "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Accessible PMR",    "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Animaux acceptés",  "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Climatisation",     "value": true }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "8"
+    }
+  }
+  </script>
+
+  <style>
+
+    /* ============================================================
+       VARIABLES CSS + RESET
+       ============================================================ */
+    :root {
+      --navy:       #1E2755;
+      --gold:       #9B8644;
+      --gold-light: #C4A96A;
+      --gold-xl:    #E8D4A0;
+      --cream:      #F7F4EE;
+      --stone:      #E8E3D8;
+      --dark:       #14193A;
+      --text:       #2C2C2C;
+      --muted:      #6B6B6B;
+      --white:      #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* Respect préférence animations réduites */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ============================================================
+       TYPOGRAPHIE COMMUNE
+       ============================================================ */
+    .section-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.625rem;
+      letter-spacing: 0.25rem;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.875rem;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.625rem;
+      color: var(--navy);
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      margin-bottom: 0.875rem;
+    }
+
+    .gold-divider {
+      width: 2.25rem;
+      height: 1.5px;
+      background: var(--gold);
+      margin: 1rem 0;
+    }
+    .gold-divider--center { margin: 1rem auto; }
+
+    /* ============================================================
+       NAVBAR
+       ============================================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 0.5px solid var(--stone);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.625rem 1.25rem;
+      gap: 1rem;
+    }
+
+    /* Logo PNG (fond transparent) */
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 48px; width: auto; }
+
+    /* Liens desktop (cachés sur mobile) */
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 1.375rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+    }
+    .nav-links a { color: var(--navy); text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+
+    /* Bouton CTA navbar */
+    .nav-cta {
+      background: var(--navy);
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      padding: 0.625rem 1rem;
+      border: 1.5px solid var(--gold);
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--navy); }
+
+    /* Burger mobile */
+    .nav-burger {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: var(--navy); transition: all 0.3s; }
+
+    /* Menu mobile déroulant */
+    .nav-mobile {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: var(--white);
+      border-top: 0.5px solid var(--stone);
+      padding: 1rem 1.25rem;
+      flex-direction: column;
+      gap: 0;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      padding: 0.75rem 0;
+      border-bottom: 0.5px solid var(--stone);
+    }
+    .nav-mobile a:last-child { color: var(--gold); border-bottom: none; }
+
+    /* ============================================================
+       HERO — SCROLL EXPAND
+       L'image de la façade commence petite et s'élargit au scroll
+       ============================================================ */
+    #hero {
+      position: relative;
+      width: 100%;
+      height: 100dvh;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark);
+    }
+
+    /* Fond texturé chevron — créé en CSS pur, pas de data URI */
+    #hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-color: var(--dark);
+      background-image:
+        repeating-linear-gradient(
+          60deg,
+          transparent, transparent 14px,
+          rgba(155, 134, 68, 0.1) 14px,
+          rgba(155, 134, 68, 0.1) 15px
+        ),
+        repeating-linear-gradient(
+          -60deg,
+          transparent, transparent 14px,
+          rgba(155, 134, 68, 0.1) 14px,
+          rgba(155, 134, 68, 0.1) 15px
+        );
+    }
+
+    /* Vignette sombre sur les bords (donne de la profondeur) */
+    #hero-vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: radial-gradient(
+        ellipse 65% 75% at 50% 50%,
+        transparent 20%,
+        rgba(20, 25, 58, 0.92) 100%
+      );
+    }
+
+    /* Conteneur de l'image — taille contrôlée par JS */
+    #hero-img-wrap {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 70px rgba(0, 0, 0, 0.6);
+      will-change: width, height, border-radius;
+    }
+    #hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Overlay sombre sur l'image — s'efface au scroll */
+    #hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.42);
+    }
+
+    /* Texte du hero par-dessus tout */
+    #hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      color: var(--white);
+      padding: 0 1.5rem;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.25rem;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.625rem;
+    }
+
+    /* H1 — unique sur la page */
+    .hero-h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 2.75rem;
+      color: var(--white);
+      line-height: 1;
+      margin: 0;
+      letter-spacing: 0.25rem;
+      text-transform: uppercase;
+    }
+    .hero-h1 .super { font-size: 1rem; font-weight: 400; vertical-align: super; letter-spacing: 0.125rem; }
+
+    /* Ligne "Restaurant / Salon de Thé" animée */
+    .hero-type-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      margin: 0.75rem 0 1.25rem;
+    }
+    .hero-type-line { width: 1.75rem; height: 0.5px; background: var(--gold-light); }
+    #hero-type {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.625rem;
+      letter-spacing: 0.25rem;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      transition: opacity 0.35s ease;
+      min-width: 9rem;
+      text-align: center;
+    }
+
+    .hero-divider { width: 2.75rem; height: 1px; background: var(--gold); margin: 0 auto 1rem; }
+
+    /* Boutons hero */
+    .hero-btns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.625rem;
+      margin-bottom: 1.375rem;
+      pointer-events: all;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      padding: 0.8125rem 2rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      padding: 0.8125rem 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* Indicateur "défiler" en bas du hero */
+    .hero-scroll-hint {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.1875rem;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.38);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .scroll-chevron {
+      width: 10px; height: 10px;
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      transform: rotate(45deg);
+      animation: bounce-arrow 1.5s ease-in-out infinite;
+    }
+    @keyframes bounce-arrow {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%       { transform: rotate(45deg) translateY(4px); }
+    }
+
+    /* ============================================================
+       BANDE INFOS PRATIQUES
+       ============================================================ */
+    #bande-infos {
+      background: var(--navy);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .bande-item {
+      text-align: center;
+      padding: 0.9375rem 0.75rem;
+      border-right:  0.5px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+    }
+    .bande-item:nth-child(2n) { border-right: none; }
+    .bande-item:nth-child(3),
+    .bande-item:nth-child(4)  { border-bottom: none; }
+
+    .bande-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.4375rem;
+      letter-spacing: 0.1875rem;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.25rem;
+    }
+    .bande-value {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.625rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.4;
+    }
+
+    /* ============================================================
+       À PROPOS
+       ============================================================ */
+    #apropos { display: grid; grid-template-columns: 1fr; }
+
+    .apropos-text {
+      padding: 2.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .apropos-text .body-text {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8125rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .apropos-photo-col {
+      background: var(--cream);
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.875rem;
+    }
+
+    /* Photo équipe — forme ronde */
+    .circle-photo {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 0 6px rgba(155, 134, 68, 0.14);
+    }
+    .circle-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .circle-caption {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.5625rem;
+      letter-spacing: 0.1875rem;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+    }
+
+    /* ============================================================
+       DESSERT — PNG fond transparent, flottant arrondi
+       ============================================================ */
+    #dessert {
+      background: var(--cream);
+      padding: 2.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Cercle décoratif de fond */
+    #dessert::before {
+      content: '';
+      position: absolute;
+      right: -3.5rem; bottom: -3.5rem;
+      width: 13rem; height: 13rem;
+      border-radius: 50%;
+      border: 3rem solid rgba(155, 134, 68, 0.06);
+      pointer-events: none;
+    }
+
+    .dessert-float { position: relative; width: 185px; flex-shrink: 0; }
+
+    /* Rond doré autour de l'image dessert (fond transparent) */
+    .dessert-img-ring {
+      width: 185px; height: 185px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      box-shadow: 0 14px 44px rgba(0, 0, 0, 0.11);
+      overflow: hidden;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dessert-img-ring img { width: 115%; height: 115%; object-fit: cover; margin-top: -8px; }
+
+    .dessert-badge {
+      position: absolute;
+      bottom: -8px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--navy);
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.4375rem;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      padding: 0.25rem 0.8125rem;
+      white-space: nowrap;
+    }
+
+    .dessert-text { text-align: center; }
+    .dessert-text em   { font-family: 'Lato', sans-serif; font-size: 0.75rem; color: var(--gold); display: block; margin-bottom: 0.5rem; }
+    .dessert-text h3   { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.375rem; color: var(--navy); text-transform: uppercase; letter-spacing: 0.0625rem; margin-bottom: 0.75rem; }
+    .dessert-text p    { font-family: 'Lato', sans-serif; font-size: 0.75rem; line-height: 1.85; color: var(--muted); }
+    .dessert-text .quote { font-style: italic; color: var(--gold); font-size: 0.6875rem; margin-top: 0.875rem; }
+
+    /* ============================================================
+       FORMULES (tarifs 2026)
+       ============================================================ */
+    #formules { background: var(--white); padding: 2.75rem 1.5rem; }
+
+    .formules-header { text-align: center; margin-bottom: 1.875rem; }
+
+    .formules-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      max-width: 36rem;
+      margin: 0 auto;
+    }
+
+    .formule-card { border: 1px solid var(--stone); padding: 1.375rem 1.125rem; text-align: center; }
+    .formule-card--featured { border-color: var(--navy); }
+
+    .fc-label  { font-family: 'Montserrat', sans-serif; font-size: 0.5rem; letter-spacing: 0.125rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+    .fc-price  { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 2.375rem; color: var(--navy); line-height: 1; }
+    .fc-price sup { font-size: 0.875rem; vertical-align: super; font-weight: 600; }
+    .fc-period { font-family: 'Lato', sans-serif; font-size: 0.5625rem; color: var(--gold); margin: 0.3125rem 0 0.625rem; }
+    .fc-detail { font-family: 'Lato', sans-serif; font-size: 0.625rem; color: var(--muted); line-height: 1.6; }
+
+    .formules-note {
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.625rem;
+      color: var(--gold);
+      margin-top: 0.75rem;
+    }
+
+    /* ============================================================
+       PRIVATISATION — avec embed Instagram vertical
+       ============================================================ -->
+    #privatisation {
+      background: var(--navy);
+      padding: 2.75rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    #privatisation .section-tag   { color: var(--gold-light); }
+    #privatisation .section-title { color: var(--white); }
+    #privatisation .gold-divider  { background: var(--gold-light); }
+
+    .priv-body {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8125rem;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 1.125rem;
+    }
+
+    /* Conteneur centré pour l'embed Instagram en format vertical */
+    .instagram-wrap { display: flex; justify-content: center; }
+    .instagram-container { max-width: 340px; width: 100%; }
+    /* Force l'embed dans son conteneur */
+    .instagram-container .instagram-media {
+      max-width: 100% !important;
+      min-width: auto !important;
+    }
+
+    /* ============================================================
+       AVIS CLIENTS — style Google Maps
+       ============================================================ */
+    #avis { background: var(--cream); padding: 2.75rem 1.5rem; }
+
+    .avis-header { text-align: center; margin-bottom: 1.625rem; }
+
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.0625rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .google-dot { width: 8px; height: 8px; border-radius: 50%; background: #4285F4; }
+
+    .avis-grid { display: grid; grid-template-columns: 1fr; gap: 0.875rem; }
+
+    /* Carte avis — coins arrondis façon Google */
+    .avis-card {
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1.125rem 1rem;
+      border: 0.5px solid var(--stone);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .avis-card-top { display: flex; align-items: center; gap: 0.625rem; margin-bottom: 0.625rem; }
+
+    /* Avatar initial coloré style Google */
+    .avis-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      color: #fff;
+    }
+
+    .avis-name  { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.6875rem; color: var(--text); margin: 0 0 0.125rem; }
+    .avis-stars { color: #FBBC04; font-size: 0.6875rem; }
+    .avis-text  { font-family: 'Lato', sans-serif; font-size: 0.625rem; line-height: 1.65; color: var(--muted); font-style: italic; }
+
+    /* ============================================================
+       RÉSERVATION — iframe Overfull
+       ============================================================ */
+    #reservation {
+      background: var(--white);
+      padding: 2.75rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .resa-body { font-family: 'Lato', sans-serif; font-size: 0.8125rem; line-height: 1.8; color: var(--muted); margin-bottom: 0.875rem; }
+
+    .resa-hours {
+      background: var(--cream);
+      padding: 1rem 1.125rem;
+      border-left: 2px solid var(--gold);
+    }
+    .resa-hours p { font-family: 'Lato', sans-serif; font-size: 0.6875rem; color: var(--navy); line-height: 1.75; margin: 0.1875rem 0; }
+    .resa-hours .resa-note { color: var(--gold); font-size: 0.625rem; margin-top: 0.375rem; }
+
+    /* Cadre de l'iframe Overfull */
+    .overfull-frame {
+      border: 1px solid var(--stone);
+      border-radius: 0.375rem;
+      overflow: hidden;
+    }
+    .overfull-frame iframe { width: 100%; height: 500px; border: none; display: block; }
+
+    /* ============================================================
+       CONTACT + CARTE GOOGLE MAPS
+       ============================================================ */
+    #contact {
+      background: var(--dark);
+      padding: 2.75rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    #contact .section-tag   { color: var(--gold-light); }
+    #contact .section-title { color: var(--white); font-size: 1.375rem; }
+    #contact .gold-divider  { background: var(--gold-light); }
+
+    .contact-details { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.25rem; }
+
+    .contact-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+
+    .contact-icon {
+      width: 34px; height: 34px;
+      background: rgba(155, 134, 68, 0.14);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.875rem;
+    }
+    .contact-lbl { font-family: 'Montserrat', sans-serif; font-size: 0.4375rem; letter-spacing: 0.125rem; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.1875rem; }
+    .contact-val { font-family: 'Lato', sans-serif; font-size: 0.75rem; color: rgba(255, 255, 255, 0.82); line-height: 1.6; }
+    .contact-val a { color: rgba(255, 255, 255, 0.82); text-decoration: none; }
+    .contact-val a:hover { color: var(--gold-light); }
+
+    /* Carte Google Maps + bouton "Ouvrir dans Google Maps" */
+    .maps-wrap { border-radius: 0.5rem; overflow: hidden; }
+    .maps-wrap iframe { width: 100%; height: 270px; border: none; display: block; }
+
+    .maps-cta {
+      display: block;
+      text-align: center;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      padding: 0.6875rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .maps-cta:hover { background: var(--gold-light); }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    #footer {
+      background: var(--dark);
+      padding: 1.875rem 1.5rem;
+      border-top: 0.5px solid rgba(255, 255, 255, 0.07);
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+    .footer-logo { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.125rem; color: var(--white); letter-spacing: 0.1875rem; text-transform: uppercase; }
+    .footer-logo span { color: var(--gold); }
+
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.25rem; list-style: none; }
+    .footer-links a { font-family: 'Lato', sans-serif; font-size: 0.5625rem; letter-spacing: 0.125rem; text-transform: uppercase; color: rgba(255, 255, 255, 0.3); text-decoration: none; }
+
+    .footer-copy { font-family: 'Lato', sans-serif; font-size: 0.5rem; color: rgba(255, 255, 255, 0.18); letter-spacing: 0.0625rem; }
+    .footer-copy a { color: rgba(255, 255, 255, 0.2); text-decoration: none; }
+
+    /* ============================================================
+       RESPONSIVE — TABLETTE (min-width: 768px)
+       ============================================================ */
+    @media (min-width: 768px) {
+
+      /* Navbar */
+      .nav-burger  { display: none; }
+      .nav-links   { display: flex; }
+
+      /* Hero */
+      .hero-h1     { font-size: 4rem; }
+      .hero-btns   { flex-direction: row; }
+
+      /* Bande infos — 4 colonnes */
+      #bande-infos { grid-template-columns: repeat(4, 1fr); }
+      .bande-item  { border-bottom: none; }
+      .bande-item:nth-child(2n)    { border-right: 0.5px solid rgba(255, 255, 255, 0.1); }
+      .bande-item:last-child       { border-right: none; }
+
+      /* À propos — 2 colonnes */
+      #apropos                     { grid-template-columns: 1fr 1fr; }
+      .apropos-text                { padding: 3.5rem 2.75rem; }
+      .circle-photo                { width: 240px; height: 240px; }
+
+      /* Dessert — côte à côte */
+      #dessert                     { flex-direction: row; padding: 3.5rem 2.75rem; }
+      .dessert-text                { text-align: left; }
+
+      /* Formules — 3 colonnes */
+      .formules-grid               { grid-template-columns: repeat(3, 1fr); }
+
+      /* Privatisation — 2 colonnes */
+      #privatisation               { grid-template-columns: 1fr 1fr; padding: 3.5rem 2.75rem; }
+
+      /* Avis — 2 colonnes */
+      .avis-grid                   { grid-template-columns: repeat(2, 1fr); }
+
+      /* Réservation — 2 colonnes */
+      #reservation                 { grid-template-columns: 1fr 1.4fr; padding: 3.5rem 2.75rem; }
+
+      /* Contact + Maps — 2 colonnes */
+      #contact                     { grid-template-columns: 1fr 1fr; padding: 3.5rem 2.75rem; }
+
+      /* Footer */
+      .footer-inner                { flex-direction: row; justify-content: space-between; text-align: left; }
+    }
+
+    /* ============================================================
+       RESPONSIVE — DESKTOP (min-width: 1280px)
+       ============================================================ */
+    @media (min-width: 1280px) {
+      .hero-h1        { font-size: 4.75rem; }
+      .section-title  { font-size: 2rem; }
+      .apropos-text   { padding: 4.5rem 3.75rem; }
+      .avis-grid      { grid-template-columns: repeat(3, 1fr); }
+      #contact        { gap: 3.5rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR — logo PNG fond transparent
+       ============================================================ -->
+  <header>
+    <nav id="navbar" role="navigation" aria-label="Navigation principale">
+
+      <a href="#" class="nav-logo" aria-label="Le May Milton — retour à l'accueil">
+        <!-- logo.png : fond transparent, fourni par le client -->
+        <img
+          src="images/logo.png"
+          alt="Le May Milton — Restaurant et Salon de Thé, Albi"
+          width="120"
+          height="48">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#formules">Menu</a></li>
+        <li><a href="#privatisation">Privatisation</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#reservation" class="nav-cta">Réserver une table</a>
+
+      <button
+        class="nav-burger"
+        id="burger-btn"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Menu mobile déroulant -->
+      <nav class="nav-mobile" id="nav-mobile" aria-label="Menu mobile">
+        <a href="#apropos">À propos</a>
+        <a href="#formules">Menu</a>
+        <a href="#privatisation">Privatisation</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+        <a href="#reservation">Réserver une table</a>
+      </nav>
+
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+       HERO — image façade qui s'élargit au scroll (ScrollExpandMedia)
+       ============================================================ -->
+  <section id="hero" aria-label="Accueil Le May Milton">
+
+    <!-- Fond texturé chevron doré -->
+    <div id="hero-bg" aria-hidden="true"></div>
+
+    <!-- Vignette sombre sur les bords -->
+    <div id="hero-vignette" aria-hidden="true"></div>
+
+    <!-- Façade : image LCP — fetchpriority="high", pas de lazy -->
+    <div id="hero-img-wrap" aria-hidden="true">
+      <picture>
+        <source srcset="images/facade.webp" type="image/webp">
+        <img
+          src="images/facade.webp"
+          alt=""
+          width="960"
+          height="640"
+          fetchpriority="high">
+      </picture>
+      <div id="hero-img-overlay"></div>
+    </div>
+
+    <!-- Texte hero -->
+    <div id="hero-content">
+      <p class="hero-eyebrow">Au pied de la Cathédrale Sainte-Cécile · Albi</p>
+      <h1 class="hero-h1"><span class="super">Le</span> May Milton</h1>
+      <div class="hero-type-row">
+        <span class="hero-type-line"></span>
+        <span id="hero-type">Restaurant</span>
+        <span class="hero-type-line"></span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-btns">
+        <a href="#reservation" class="btn-gold">Réserver une table</a>
+        <a href="#formules"    class="btn-ghost">Découvrir le menu</a>
+      </div>
+      <p class="hero-scroll-hint">
+        Défiler pour découvrir
+        <span class="scroll-chevron" aria-hidden="true"></span>
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       BANDE INFOS PRATIQUES
+       ============================================================ -->
+  <div id="bande-infos" aria-label="Horaires et informations pratiques">
+    <div class="bande-item">
+      <p class="bande-label">Mar · Mer · Dim</p>
+      <p class="bande-value">09h – 18h</p>
+    </div>
+    <div class="bande-item">
+      <p class="bande-label">Jeu · Ven · Sam</p>
+      <p class="bande-value">09h – 21h30</p>
+    </div>
+    <div class="bande-item">
+      <p class="bande-label">100 couverts</p>
+      <p class="bande-value">Terrasse &amp; étage privatisable</p>
+    </div>
+    <div class="bande-item">
+      <p class="bande-label">Partenaire</p>
+      <p class="bande-value">Albi City Pass</p>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       À PROPOS — photo ronde
+       ============================================================ -->
+  <section id="apropos" aria-labelledby="apropos-title">
+
+    <div class="apropos-text">
+      <p class="section-tag">Notre histoire</p>
+      <h2 class="section-title" id="apropos-title">Un lieu où pierres<br>&amp; saveurs se rencontrent</h2>
+      <div class="gold-divider"></div>
+      <p class="body-text">
+        Installé dans un site archéologique classé, au cœur de la cité médiévale d'Albi,
+        Le May Milton vous accueille dans un cadre exceptionnel où le moderne se marie à la pierre ancienne.
+      </p>
+      <br>
+      <p class="body-text">
+        Notre cuisine, 100% faite maison, valorise les produits frais et de saison.
+        Du petit-déjeuner au dîner, en passant par le salon de thé, chaque moment a sa saveur.
+      </p>
+    </div>
+
+    <div class="apropos-photo-col">
+      <!-- Photo équipe — forme ronde -->
+      <div class="circle-photo">
+        <picture>
+          <source srcset="images/apropos.webp" type="image/webp">
+          <img
+            src="images/apropos.webp"
+            alt="L'équipe du May Milton derrière le bar"
+            width="240"
+            height="240"
+            loading="lazy"
+            decoding="async">
+        </picture>
+      </div>
+      <p class="circle-caption">L'équipe du May Milton</p>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       DESSERT — PNG fond transparent, cadre rond doré
+       ============================================================ -->
+  <section id="dessert" aria-labelledby="dessert-title">
+
+    <div class="dessert-float">
+      <div class="dessert-img-ring">
+        <!-- dessert.png : fond transparent, fourni par le client -->
+        <img
+          src="images/dessert.png"
+          alt="Dessert fait maison — crêpe caramel chantilly"
+          width="200"
+          height="200"
+          loading="lazy"
+          decoding="async">
+      </div>
+      <span class="dessert-badge">Fait maison</span>
+    </div>
+
+    <div class="dessert-text">
+      <em>L'ardoise change chaque semaine</em>
+      <h3 id="dessert-title">Nos desserts<br>vous surprennent</h3>
+      <div class="gold-divider"></div>
+      <p>Du Mesturet, spécialité locale nappée de chocolat, au cheesecake coulis fruits rouges…
+         chaque dessert est une attention portée jusqu'au bout du repas.</p>
+      <p class="quote">"Spécialités locales à découvrir : le Mesturet en dessert." — Patrick H.</p>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       FORMULES — tarifs 2026
+       ============================================================ -->
+  <section id="formules" aria-labelledby="formules-title">
+
+    <div class="formules-header">
+      <p class="section-tag" style="text-align:center">La carte</p>
+      <h2 class="section-title" id="formules-title" style="text-align:center">Nos formules 2026</h2>
+      <div class="gold-divider gold-divider--center"></div>
+    </div>
+
+    <div class="formules-grid">
+
+      <div class="formule-card">
+        <p class="fc-label">Entrée + Plat<br>ou Plat + Dessert</p>
+        <p class="fc-price"><sup>€</sup>16</p>
+        <p class="fc-period">Midi semaine</p>
+        <p class="fc-detail">18 € le soir &amp; dimanche</p>
+      </div>
+
+      <div class="formule-card formule-card--featured">
+        <p class="fc-label">Entrée + Plat + Dessert</p>
+        <p class="fc-price"><sup>€</sup>19</p>
+        <p class="fc-period">Midi semaine</p>
+        <p class="fc-detail">21 € le soir &amp; dimanche</p>
+      </div>
+
+      <div class="formule-card">
+        <p class="fc-label">Menu enfant</p>
+        <p class="fc-price"><sup>€</sup>10</p>
+        <p class="fc-period">Tous services</p>
+        <p class="fc-detail">Jusqu'à 12 ans</p>
+      </div>
+
+    </div>
+
+    <p class="formules-note">Petit-déjeuner 8 € · Plat du jour seul 15 € · À la carte : entrées dès 6 €, plats jusqu'à 25 €</p>
+    <p class="formules-note">Vins au verre 5–6 € · Bouteille 25–28 €</p>
+
+  </section>
+
+
+  <!-- ============================================================
+       PRIVATISATION — embed Instagram vidéo verticale
+       ============================================================ -->
+  <section id="privatisation" aria-labelledby="priv-title">
+
+    <div class="priv-text">
+      <p class="section-tag">Événements &amp; groupes</p>
+      <h2 class="section-title" id="priv-title">Privatisez l'étage<br>pour vos moments</h2>
+      <div class="gold-divider"></div>
+      <p class="priv-body">
+        Séminaires, repas de famille, anniversaires… Notre salle à l'étage,
+        privatisable de 30 à 45 personnes, offre une vue exceptionnelle sur le Palais de la Berbie.
+      </p>
+      <p class="priv-body">
+        Partenaire Albi City Pass : apéritif maison offert à la présentation de votre pass.
+      </p>
+      <a href="#contact" class="btn-gold" style="pointer-events:all">Nous contacter</a>
+    </div>
+
+    <!-- Vidéo Instagram embed (format vertical / Reel) -->
+    <div class="instagram-wrap">
+      <div class="instagram-container">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DWop1dhR7h6/"
+          data-instgrm-version="14"
+          style="background:#FFF;border:0;border-radius:3px;
+                 box-shadow:0 0 1px 0 rgba(0,0,0,.5),0 1px 10px 0 rgba(0,0,0,.15);
+                 margin:1px;max-width:340px;min-width:280px;padding:0;width:99.375%">
+          <a
+            href="https://www.instagram.com/p/DWop1dhR7h6/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Voir la vidéo de privatisation sur Instagram
+          </a>
+        </blockquote>
+        <script async defer src="https://www.instagram.com/embed.js"></script>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       AVIS CLIENTS — style Google Maps (cartes arrondies + avatars)
+       ============================================================ -->
+  <section id="avis" aria-labelledby="avis-title">
+
+    <div class="avis-header">
+      <span class="google-badge">
+        <span class="google-dot" aria-hidden="true"></span>
+        Avis Google vérifiés ★★★★★
+      </span>
+      <p class="section-tag">Ils nous ont choisis</p>
+      <h2 class="section-title" id="avis-title">Vos avis, notre fierté</h2>
+      <div class="gold-divider gold-divider--center"></div>
+    </div>
+
+    <div class="avis-grid">
+
+      <article class="avis-card">
+        <div class="avis-card-top">
+          <div class="avis-avatar" style="background:#4285F4" aria-hidden="true">B</div>
+          <div>
+            <p class="avis-name">Bernardet Lea</p>
+            <p class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</p>
+          </div>
+        </div>
+        <p class="avis-text">"Cadre magnifique où le moderne se marie parfaitement à la pierre ancienne."</p>
+      </article>
+
+      <article class="avis-card">
+        <div class="avis-card-top">
+          <div class="avis-avatar" style="background:#34A853" aria-hidden="true">J</div>
+          <div>
+            <p class="avis-name">Jean-Pierre N.</p>
+            <p class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</p>
+          </div>
+        </div>
+        <p class="avis-text">"Pas de frime… une cuisine sincère à l'écart de la foule."</p>
+      </article>
+
+      <article class="avis-card">
+        <div class="avis-card-top">
+          <div class="avis-avatar" style="background:#EA4335" aria-hidden="true">L</div>
+          <div>
+            <p class="avis-name">Laëtitia Lgg</p>
+            <p class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</p>
+          </div>
+        </div>
+        <p class="avis-text">"Plats cuisinés avec finesse. Grande salle au calme avec un petit bassin de carpes."</p>
+      </article>
+
+      <article class="avis-card">
+        <div class="avis-card-top">
+          <div class="avis-avatar" style="background:#FBBC04;color:#333" aria-hidden="true">P</div>
+          <div>
+            <p class="avis-name">Patrick Hersant</p>
+            <p class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</p>
+          </div>
+        </div>
+        <p class="avis-text">"Spécialités locales à découvrir : le Perlé pour l'apéro et le Mesturet en dessert."</p>
+      </article>
+
+      <article class="avis-card">
+        <div class="avis-card-top">
+          <div class="avis-avatar" style="background:#9C27B0" aria-hidden="true">A</div>
+          <div>
+            <p class="avis-name">Alexandre Roques</p>
+            <p class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</p>
+          </div>
+        </div>
+        <p class="avis-text">"Le service est très bien, nous nous sommes régalés du grand au plus petit."</p>
+      </article>
+
+      <article class="avis-card">
+        <div class="avis-card-top">
+          <div class="avis-avatar" style="background:#FF5722" aria-hidden="true">M</div>
+          <div>
+            <p class="avis-name">Matis GRD</p>
+            <p class="avis-stars" aria-label="5 étoiles sur 5">★★★★★</p>
+          </div>
+        </div>
+        <p class="avis-text">"Équipe dynamique et souriante, un point d'honneur à offrir un service de qualité."</p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       RÉSERVATION — iframe Overfull intégrée
+       ============================================================ -->
+  <section id="reservation" aria-labelledby="resa-title">
+
+    <div class="resa-info">
+      <p class="section-tag">Réservation en ligne</p>
+      <h2 class="section-title" id="resa-title">Réservez<br>votre table</h2>
+      <div class="gold-divider"></div>
+      <p class="resa-body">
+        Réservation directe, sans frais, via notre partenaire Overfull.
+        Paiement sur place.
+      </p>
+      <div class="resa-hours">
+        <p><strong>Mar · Mer · Dim :</strong> 09h – 18h</p>
+        <p><strong>Jeu · Ven · Sam :</strong> 09h – 21h30</p>
+        <p class="resa-note">Ouvert tous les jours fériés</p>
+      </div>
+    </div>
+
+    <!-- Module de réservation Overfull -->
+    <div class="overfull-frame">
+      <iframe
+        src="https://app.overfull.fr/booking-v2/?key_id=Ad7AvU3hT3e"
+        title="Réservation en ligne — Le May Milton via Overfull"
+        loading="lazy">
+      </iframe>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT + CARTE GOOGLE MAPS
+       Clic sur le bouton → ouvre Google Maps
+       ============================================================ -->
+  <section id="contact" aria-labelledby="contact-title">
+
+    <div class="contact-info">
+      <p class="section-tag">Nous trouver</p>
+      <h2 class="section-title" id="contact-title">Venez nous rendre<br>visite à Albi</h2>
+      <div class="gold-divider"></div>
+
+      <address class="contact-details" style="font-style:normal">
+
+        <div class="contact-item">
+          <span class="contact-icon" aria-hidden="true">📍</span>
+          <div>
+            <p class="contact-lbl">Adresse</p>
+            <p class="contact-val">4 Rue de la Temporalité<br>81000 Albi</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-icon" aria-hidden="true">📞</span>
+          <div>
+            <p class="contact-lbl">Téléphone</p>
+            <p class="contact-val">
+              <a href="tel:+33563436158">05 63 43 61 58</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-icon" aria-hidden="true">🕐</span>
+          <div>
+            <p class="contact-lbl">Horaires</p>
+            <p class="contact-val">
+              Mar · Mer · Dim : 09h – 18h<br>
+              Jeu · Ven · Sam : 09h – 21h30<br>
+              Ouvert tous les jours fériés
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-icon" aria-hidden="true">💳</span>
+          <div>
+            <p class="contact-lbl">Paiements acceptés</p>
+            <p class="contact-val">CB · Amex · Chèque-Vacances · Espèces · Virement · Sans contact</p>
+          </div>
+        </div>
+
+      </address>
+    </div>
+
+    <!-- Carte Google Maps + bouton vers Google Maps -->
+    <div>
+      <div class="maps-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=4+Rue+de+la+Temporalité,+81000+Albi,+France&output=embed&hl=fr"
+          title="Carte — Le May Milton, 4 Rue de la Temporalité, Albi"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Le+May+Milton+4+Rue+de+la+Temporalité+81000+Albi"
+        class="maps-cta"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Ouvrir Le May Milton dans Google Maps">
+        Ouvrir dans Google Maps →
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <p class="footer-logo">Le <span>May</span> Milton</p>
+
+      <ul class="footer-links">
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#formules">Menu</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <p class="footer-copy">
+        © 2026 Le May Milton · Albi ·
+        Site réalisé par
+        <a href="https://kovama.fr" target="_blank" rel="noopener noreferrer">Kovama</a>
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JS — Burger menu mobile
+       ============================================================ -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      var burger   = document.getElementById('burger-btn');
+      var mobileNav = document.getElementById('nav-mobile');
+
+      burger.addEventListener('click', function () {
+        var open = mobileNav.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open);
+      }, { passive: true });
+
+      /* Fermer le menu au clic sur un lien */
+      mobileNav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileNav.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+        }, { passive: true });
+      });
+    });
+  </script>
+
+
+  <!-- ============================================================
+       JS — Alternance "Restaurant" / "Salon de Thé" dans le hero
+       ============================================================ -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      var types = ['Restaurant', 'Salon de Thé'];
+      var index = 0;
+      var el    = document.getElementById('hero-type');
+      if (!el) return;
+
+      el.style.transition = 'opacity 0.35s ease';
+
+      setInterval(function () {
+        el.style.opacity = '0';
+        setTimeout(function () {
+          index = (index + 1) % types.length;
+          el.textContent = types[index];
+          el.style.opacity = '1';
+        }, 360);
+      }, 3200);
+    });
+  </script>
+
+
+  <!-- ============================================================
+       JS — Effet scroll-expand hero (ScrollExpandMedia)
+       L'image de la façade part d'un format réduit et s'élargit
+       progressivement jusqu'à remplir tout l'écran au scroll.
+       Une fois plein écran, le scroll normal reprend.
+       ============================================================ -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      var wrap    = document.getElementById('hero-img-wrap');
+      var overlay = document.getElementById('hero-img-overlay');
+      if (!wrap) return;
+
+      var progress     = 0;
+      var expanded     = false; /* true = image plein écran, scroll libre */
+      var touchStartY  = 0;
+
+      /* Tailles de départ selon la résolution */
+      function sizes() {
+        var mobile = window.innerWidth < 768;
+        return {
+          sw: mobile ? 260 : 420,
+          sh: mobile ? 180 : 300,
+          ew: window.innerWidth,
+          eh: window.innerHeight
+        };
+      }
+
+      /* Applique l'état visuel selon la progression */
+      function render() {
+        var s  = sizes();
+        var w  = Math.round(s.sw + progress * (s.ew - s.sw));
+        var h  = Math.round(s.sh + progress * (s.eh - s.sh));
+        var r  = Math.round((1 - progress) * 8);
+        var op = Math.max(0, 0.42 - progress * 0.42);
+
+        wrap.style.width        = w  + 'px';
+        wrap.style.height       = h  + 'px';
+        wrap.style.borderRadius = r  + 'px';
+        overlay.style.opacity   = op;
+      }
+
+      /* Initialisation */
+      render();
+
+      /* ── Molette ── */
+      function onWheel(e) {
+        /* Scroll arrière quand plein écran et tout en haut = refermer */
+        if (expanded && e.deltaY < 0 && window.scrollY <= 5) {
+          expanded = false;
+          e.preventDefault();
+          return;
+        }
+        if (!expanded) {
+          e.preventDefault();
+          progress = Math.min(Math.max(progress + e.deltaY * 0.001, 0), 1);
+          render();
+          if (progress >= 1) expanded = true;
+        }
+      }
+
+      /* ── Touch ── */
+      function onTouchStart(e) {
+        touchStartY = e.touches[0].clientY;
+      }
+
+      function onTouchMove(e) {
+        if (!touchStartY) return;
+        var dy = touchStartY - e.touches[0].clientY;
+
+        if (expanded && dy < -20 && window.scrollY <= 5) {
+          expanded = false;
+          e.preventDefault();
+          return;
+        }
+        if (!expanded) {
+          e.preventDefault();
+          var factor = dy < 0 ? 0.007 : 0.005;
+          progress = Math.min(Math.max(progress + dy * factor, 0), 1);
+          render();
+          if (progress >= 1) expanded = true;
+          touchStartY = e.touches[0].clientY;
+        }
+      }
+
+      function onTouchEnd() { touchStartY = 0; }
+
+      /* Bloque le scroll de la page tant que l'image n'est pas ouverte */
+      function onScroll() {
+        if (!expanded) window.scrollTo(0, 0);
+      }
+
+      window.addEventListener('wheel',      onWheel,      { passive: false });
+      window.addEventListener('scroll',     onScroll,     { passive: true  });
+      window.addEventListener('touchstart', onTouchStart, { passive: true  });
+      window.addEventListener('touchmove',  onTouchMove,  { passive: false });
+      window.addEventListener('touchend',   onTouchEnd,   { passive: true  });
+    });
+  </script>
+
+</body>
+</html>
