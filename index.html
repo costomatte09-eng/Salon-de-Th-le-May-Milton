@@ -699,99 +699,35 @@
     }
 
     /* ============================================================
-       PRIVATISATION — fond crème, lignes dorées décoratives, vidéo portrait
-       ⚠️  Fournir : images/privatisation.mp4
-                     images/privatisation-poster.webp (vignette vidéo)
+       PRIVATISATION — avec embed Instagram vertical
        ============================================================ */
     #privatisation {
-      background: var(--cream);
+      background: var(--navy);
       padding: 2.75rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2.5rem;
-      position: relative;
-      overflow: hidden;
+      gap: 2rem;
     }
+    #privatisation .section-tag   { color: var(--gold-light); }
+    #privatisation .section-title { color: var(--white); }
+    #privatisation .gold-divider  { background: var(--gold-light); }
 
-    /* Lignes décoratives SVG positionnées en absolu dans les coins */
-    .priv-deco {
-      position: absolute;
-      pointer-events: none;
-      overflow: visible;
-    }
-    .priv-deco--tr { top: 0; right: 0; width: 180px; height: 180px; }
-    .priv-deco--bl { bottom: 0; left: 0; width: 160px; height: 160px; transform: rotate(180deg); }
-
-    /* Corps de texte */
     .priv-body {
       font-family: 'Lato', sans-serif;
       font-size: 0.8125rem;
       line-height: 1.85;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.65);
       margin-bottom: 1.125rem;
     }
 
-    /* Bouton "Nous contacter" — style Kovama avec icône téléphone */
-    .btn-priv-contact {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--navy);
-      color: var(--gold-light);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.5625rem;
-      letter-spacing: 0.125rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      padding: 0.875rem 1.75rem;
-      border: 1.5px solid var(--gold);
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
+    /* Conteneur centré pour l'embed Instagram en format vertical */
+    .instagram-wrap { display: flex; justify-content: center; }
+    .instagram-container { max-width: 340px; width: 100%; }
+    /* Force l'embed dans son conteneur */
+    .instagram-container .instagram-media {
+      max-width: 100% !important;
+      min-width: auto !important;
     }
-    .btn-priv-contact:hover { background: var(--gold); color: var(--navy); }
-    .btn-priv-contact svg   { flex-shrink: 0; }
-
-    /* Colonne vidéo droite */
-    .priv-video-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
-    /* Conteneur vidéo portrait 9:16 */
-    .priv-video-wrap {
-      width: 100%;
-      max-width: 280px;
-      aspect-ratio: 9 / 16;
-      border-radius: 0.875rem;
-      overflow: hidden;
-      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.18);
-      background: var(--dark);
-    }
-    .priv-video-wrap video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Bouton "Voir le profil" — pill navy */
-    .priv-profil-btn {
-      display: inline-block;
-      background: var(--navy);
-      color: var(--white);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.5625rem;
-      letter-spacing: 0.0625rem;
-      font-weight: 700;
-      padding: 0.75rem 2rem;
-      border-radius: 2rem;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    .priv-profil-btn:hover { background: var(--gold); color: var(--navy); }
 
     /* ============================================================
        AVIS CLIENTS — style Google Maps
@@ -989,8 +925,8 @@
       /* Formules — 3 colonnes */
       .formules-grid               { grid-template-columns: repeat(3, 1fr); }
 
-      /* Privatisation — texte gauche + vidéo portrait droite */
-      #privatisation               { grid-template-columns: 1fr auto; align-items: center; padding: 3.5rem 2.75rem; }
+      /* Privatisation — 2 colonnes */
+      #privatisation               { grid-template-columns: 1fr 1fr; padding: 3.5rem 2.75rem; }
 
       /* Avis — 2 colonnes */
       .avis-grid                   { grid-template-columns: repeat(2, 1fr); }
@@ -1266,30 +1202,10 @@
 
 
   <!-- ============================================================
-       PRIVATISATION — vidéo portrait inline + lignes dorées décoratives
-       ⚠️  Fournir : images/privatisation.mp4
-                     images/privatisation-poster.webp (vignette de la vidéo)
+       PRIVATISATION — embed Instagram vidéo verticale
        ============================================================ -->
   <section id="privatisation" aria-labelledby="priv-title">
 
-    <!-- Lignes décoratives dorées — coin haut-droit -->
-    <svg class="priv-deco priv-deco--tr" aria-hidden="true" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0"   y1="180" x2="180" y2="0"   stroke="rgba(155,134,68,0.35)" stroke-width="1"/>
-      <line x1="25"  y1="180" x2="180" y2="25"  stroke="rgba(155,134,68,0.28)" stroke-width="1"/>
-      <line x1="50"  y1="180" x2="180" y2="50"  stroke="rgba(155,134,68,0.22)" stroke-width="1"/>
-      <line x1="75"  y1="180" x2="180" y2="75"  stroke="rgba(155,134,68,0.16)" stroke-width="1"/>
-      <line x1="100" y1="180" x2="180" y2="100" stroke="rgba(155,134,68,0.10)" stroke-width="1"/>
-    </svg>
-
-    <!-- Lignes décoratives dorées — coin bas-gauche -->
-    <svg class="priv-deco priv-deco--bl" aria-hidden="true" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0"  y1="160" x2="160" y2="0"  stroke="rgba(155,134,68,0.30)" stroke-width="1"/>
-      <line x1="22" y1="160" x2="160" y2="22" stroke="rgba(155,134,68,0.22)" stroke-width="1"/>
-      <line x1="44" y1="160" x2="160" y2="44" stroke="rgba(155,134,68,0.16)" stroke-width="1"/>
-      <line x1="66" y1="160" x2="160" y2="66" stroke="rgba(155,134,68,0.10)" stroke-width="1"/>
-    </svg>
-
-    <!-- Colonne gauche : texte -->
     <div class="priv-text">
       <p class="section-tag">Événements &amp; groupes</p>
       <h2 class="section-title" id="priv-title">Privatisez l'étage<br>pour vos moments</h2>
@@ -1301,41 +1217,28 @@
       <p class="priv-body">
         Partenaire Albi City Pass : apéritif maison offert à la présentation de votre pass.
       </p>
-      <a href="tel:+33563436158" class="btn-priv-contact" aria-label="Nous contacter par téléphone">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-1.34a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 1.97z"/>
-        </svg>
-        Nous contacter
-      </a>
+      <a href="#contact" class="btn-gold" style="pointer-events:all">Nous contacter</a>
     </div>
 
-    <!-- Colonne droite : vidéo portrait + bouton profil -->
-    <div class="priv-video-col">
-      <div class="priv-video-wrap">
-        <video
-          <iframe width="315" height="560" 
-  src="https://www.youtube.com/embed/x5NJKO34JXA" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-</iframe>
-          poster="images/privatisation-poster.webp"
-          controls
-          playsinline
-          preload="none"
-          width="280"
-          height="497"
-          aria-label="Visite de la salle privatisable du May Milton">
-        </video>
+    <!-- Vidéo Instagram embed (format vertical / Reel) -->
+    <div class="instagram-wrap">
+      <div class="instagram-container">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DWop1dhR7h6/"
+          data-instgrm-version="14"
+          style="background:#FFF;border:0;border-radius:3px;
+                 box-shadow:0 0 1px 0 rgba(0,0,0,.5),0 1px 10px 0 rgba(0,0,0,.15);
+                 margin:1px;max-width:340px;min-width:280px;padding:0;width:99.375%">
+          <a
+            href="https://www.instagram.com/p/DWop1dhR7h6/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Voir la vidéo de privatisation sur Instagram
+          </a>
+        </blockquote>
+        <script async defer src="https://www.instagram.com/embed.js"></script>
       </div>
-      <a
-        href="https://www.instagram.com/lemaymilton/"
-        class="priv-profil-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Voir le profil Instagram du May Milton">
-        Voir le profil
-      </a>
     </div>
 
   </section>
