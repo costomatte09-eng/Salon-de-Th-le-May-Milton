@@ -350,13 +350,14 @@
     }
 
     .hero-eyebrow {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.5625rem;
-      letter-spacing: 0.25rem;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 0.625rem;
-    }
+  font-family: 'Lato', sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.625rem;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85), 0 0 20px rgba(0, 0, 0, 0.6);
+}
 
     /* H1 — unique sur la page */
     .hero-h1 {
@@ -370,7 +371,20 @@
       text-transform: uppercase;
     }
     .hero-h1 .super { font-size: 1rem; font-weight: 400; vertical-align: super; letter-spacing: 0.125rem; }
+    .hero-h1 .super { font-size: 1rem; font-weight: 400; vertical-align: super; letter-spacing: 0.125rem; }
 
+/* "LE" — superscript élégant */
+.hero-le {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 300;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  vertical-align: super;
+  line-height: 0;
+  margin-right: 0.2rem;
+}
     /* Ligne "Restaurant / Salon de Thé" animée */
     .hero-type-row {
       display: flex;
@@ -379,30 +393,41 @@
       gap: 0.625rem;
       margin: 0.75rem 0 1.25rem;
     }
-    .hero-type-line { width: 1.75rem; height: 0.5px; background: var(--gold-light); }
+    .hero-type-line {
+  width: 1.75rem;
+  height: 0.5px;
+  background: var(--gold-light);
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.8));
     #hero-type {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.625rem;
-      letter-spacing: 0.25rem;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      transition: opacity 0.35s ease;
-      min-width: 9rem;
-      text-align: center;
-    }
+  font-family: 'Lato', sans-serif;
+  font-size: 0.625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  transition: opacity 0.35s ease;
+  min-width: 9rem;
+  text-align: center;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85), 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
 
     .hero-divider { width: 2.75rem; height: 1px; background: var(--gold); margin: 0 auto 1rem; }
 
     /* Boutons hero */
     .hero-btns {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.625rem;
-      margin-bottom: 1.375rem;
-      pointer-events: all;
-    }
-
+  position: absolute;
+  bottom: 5.5rem;                  /* au-dessus du scroll hint */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: row;             /* côte à côte */
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  pointer-events: all;
+  white-space: nowrap;
+}
     .btn-gold {
       background: var(--gold);
       color: var(--navy);
@@ -436,16 +461,23 @@
 
     /* Indicateur "défiler" en bas du hero */
     .hero-scroll-hint {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.5625rem;
-      letter-spacing: 0.1875rem;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.38);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.1875rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
     .scroll-chevron {
       width: 10px; height: 10px;
       border-right: 1px solid rgba(255, 255, 255, 0.3);
@@ -956,22 +988,21 @@
     <!-- Texte hero -->
     <div id="hero-content">
       <p class="hero-eyebrow">Au pied de la Cathédrale Sainte-Cécile · Albi</p>
-      <h1 class="hero-h1"><span class="super">Le</span> May Milton</h1>
+      <h1 class="hero-h1"><span class="hero-le">LE </span>MAY MILTON</h1>
       <div class="hero-type-row">
         <span class="hero-type-line"></span>
         <span id="hero-type">Restaurant</span>
         <span class="hero-type-line"></span>
       </div>
       <div class="hero-divider"></div>
-      <div class="hero-btns">
-        <a href="#reservation" class="btn-gold">Réserver une table</a>
-        <a href="#formules"    class="btn-ghost">Découvrir le menu</a>
-      </div>
-      <p class="hero-scroll-hint">
-        Défiler pour découvrir
-        <span class="scroll-chevron" aria-hidden="true"></span>
-      </p>
-    </div>
+      <div class="hero-btns" role="group" aria-label="Actions principales">
+  <a href="..." class="btn-gold">RÉSERVER UNE TABLE</a>
+  <a href="..." class="btn-ghost">DÉCOUVRIR LE MENU</a>
+</div>
+      <p class="hero-scroll-hint" aria-hidden="true">
+  <span class="scroll-chevron"></span>
+  DÉFILER POUR DÉCOUVRIR
+</p>
 
   </section>
 
