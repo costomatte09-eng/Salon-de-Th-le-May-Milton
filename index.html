@@ -847,7 +847,25 @@
   .avis-card {
     flex: 0 0 82%;
     scroll-snap-align: start;
+  /* Clones invisibles hors carousel */
+.avis-clone { display: none; }
+
+@media (max-width: 767px) {
+  .avis-grid {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.875rem;
   }
+  .avis-grid::-webkit-scrollbar { display: none; }
+  .avis-card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+  /* Clones visibles uniquement dans le carousel */
+  .avis-clone { display: flex; flex-direction: column; }}
 }
     /* ============================================================
        RÉSERVATION — iframe Overfull
