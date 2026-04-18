@@ -350,15 +350,22 @@
       width: 100%;
     }
 
-    /* ── MODIFIÉ : eyebrow plus lisible + text-shadow ── */
+    /* ── MODIFIÉ : eyebrow sorti de l'image, positionné en absolu
+          au-dessus du cadre photo, dans la zone sombre du hero ── */
     .hero-eyebrow {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      top: calc(50% - 140px);
       font-family: 'Lato', sans-serif;
       font-size: 0.625rem;
-      letter-spacing: 0.22rem;
+      letter-spacing: 0.2rem;
       text-transform: uppercase;
       color: var(--gold-light);
-      margin-bottom: 0.75rem;
-      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.65);
+      text-align: center;
+      max-width: 90vw;
+      pointer-events: none;
     }
 
     /* H1 — unique sur la page */
@@ -410,16 +417,21 @@
 
     .hero-divider { width: 2.75rem; height: 1px; background: var(--gold); margin: 0 auto 1rem; }
 
-    /* ── MODIFIÉ : boutons centrés, largeur 100% du conteneur ── */
+    /* ── MODIFIÉ : boutons positionnés en absolu, à cheval sur
+          le bord bas de l'image (image bottom mobile ≈ 50% + 90px) ── */
     .hero-btns {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      top: calc(50% + 60px);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 0.625rem;
-      margin-bottom: 1.375rem;
       pointer-events: all;
-      width: 100%;
+      white-space: nowrap;
     }
 
     .btn-gold {
@@ -439,9 +451,9 @@
     }
     .btn-gold:hover { background: var(--gold-light); }
 
-    /* ── MODIFIÉ : bouton ghost plus visible (fond + bordure renforcés) ── */
+    /* ── MODIFIÉ : bouton ghost avec bordure et fond bien visibles ── */
     .btn-ghost {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.13);
       color: var(--white);
       font-family: 'Montserrat', sans-serif;
       font-size: 0.5625rem;
@@ -449,7 +461,7 @@
       text-transform: uppercase;
       font-weight: 700;
       padding: 0.8125rem 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
@@ -475,16 +487,12 @@
       white-space: nowrap;
     }
 
+    /* ── MODIFIÉ : flèche statique, sans animation ── */
     .scroll-chevron {
       width: 10px; height: 10px;
       border-right: 1px solid rgba(255, 255, 255, 0.3);
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       transform: rotate(45deg);
-      animation: bounce-arrow 1.5s ease-in-out infinite;
-    }
-    @keyframes bounce-arrow {
-      0%, 100% { transform: rotate(45deg) translateY(0); }
-      50%       { transform: rotate(45deg) translateY(4px); }
     }
 
     /* ============================================================
@@ -859,7 +867,10 @@
 
       /* Hero */
       .hero-h1     { font-size: 4rem; }
-      .hero-btns   { flex-direction: row; }
+      /* image bottom desktop ≈ 50% + 150px → boutons à cheval */
+      .hero-btns   { flex-direction: row; top: calc(50% + 110px); }
+      /* image top desktop ≈ 50% - 150px → eyebrow 45px au-dessus */
+      .hero-eyebrow { top: calc(50% - 200px); font-size: 0.6875rem; }
 
       /* Bande infos — 4 colonnes */
       #bande-infos { grid-template-columns: repeat(4, 1fr); }
@@ -982,20 +993,23 @@
       <div id="hero-img-overlay"></div>
     </div>
 
-    <!-- Texte hero — "Défiler" est sorti de ce bloc, voir ci-dessous -->
+    <!-- Texte eyebrow — au-dessus de l'image, dans la zone sombre -->
+    <p class="hero-eyebrow">Au pied de la Cathédrale Sainte-Cécile · Albi</p>
+
+    <!-- Titre + type, centrés sur l'image -->
     <div id="hero-content">
-      <p class="hero-eyebrow">Au pied de la Cathédrale Sainte-Cécile · Albi</p>
       <h1 class="hero-h1"><span class="super">Le</span> May Milton</h1>
       <div class="hero-type-row">
         <span class="hero-type-line"></span>
         <span id="hero-type">Restaurant</span>
         <span class="hero-type-line"></span>
       </div>
-      <div class="hero-divider"></div>
-      <div class="hero-btns">
-        <a href="#reservation" class="btn-gold">Réserver une table</a>
-        <a href="#formules"    class="btn-ghost">Découvrir le menu</a>
-      </div>
+    </div>
+
+    <!-- Boutons — à cheval sur le bord bas de l'image -->
+    <div class="hero-btns">
+      <a href="#reservation" class="btn-gold">Réserver une table</a>
+      <a href="#formules"    class="btn-ghost">Découvrir le menu</a>
     </div>
 
     <!-- Indicateur "Défiler" — positionné en bas du hero, hors du bloc centré -->
