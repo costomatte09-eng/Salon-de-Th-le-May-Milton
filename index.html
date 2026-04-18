@@ -347,15 +347,18 @@
       color: var(--white);
       padding: 0 1.5rem;
       pointer-events: none;
+      width: 100%;
     }
 
+    /* ── MODIFIÉ : eyebrow plus lisible + text-shadow ── */
     .hero-eyebrow {
       font-family: 'Lato', sans-serif;
-      font-size: 0.5625rem;
-      letter-spacing: 0.25rem;
+      font-size: 0.625rem;
+      letter-spacing: 0.22rem;
       text-transform: uppercase;
       color: var(--gold-light);
-      margin-bottom: 0.625rem;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.65);
     }
 
     /* H1 — unique sur la page */
@@ -369,7 +372,16 @@
       letter-spacing: 0.25rem;
       text-transform: uppercase;
     }
-    .hero-h1 .super { font-size: 1rem; font-weight: 400; vertical-align: super; letter-spacing: 0.125rem; }
+
+    /* ── MODIFIÉ : "Le" affiché en bloc centré au-dessus du titre ── */
+    .hero-h1 .super {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.55rem;
+      vertical-align: baseline;
+      margin-bottom: 0.2rem;
+    }
 
     /* Ligne "Restaurant / Salon de Thé" animée */
     .hero-type-row {
@@ -379,28 +391,35 @@
       gap: 0.625rem;
       margin: 0.75rem 0 1.25rem;
     }
-    .hero-type-line { width: 1.75rem; height: 0.5px; background: var(--gold-light); }
+
+    /* ── MODIFIÉ : ligne plus épaisse et visible ── */
+    .hero-type-line { width: 2rem; height: 1px; background: var(--gold-light); opacity: 0.7; }
+
+    /* ── MODIFIÉ : texte type plus grand, plus contrasté ── */
     #hero-type {
       font-family: 'Lato', sans-serif;
-      font-size: 0.625rem;
+      font-size: 0.75rem;
       letter-spacing: 0.25rem;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: var(--gold-xl);
       transition: opacity 0.35s ease;
       min-width: 9rem;
       text-align: center;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.55);
     }
 
     .hero-divider { width: 2.75rem; height: 1px; background: var(--gold); margin: 0 auto 1rem; }
 
-    /* Boutons hero */
+    /* ── MODIFIÉ : boutons centrés, largeur 100% du conteneur ── */
     .hero-btns {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 0.625rem;
       margin-bottom: 1.375rem;
       pointer-events: all;
+      width: 100%;
     }
 
     .btn-gold {
@@ -420,22 +439,29 @@
     }
     .btn-gold:hover { background: var(--gold-light); }
 
+    /* ── MODIFIÉ : bouton ghost plus visible (fond + bordure renforcés) ── */
     .btn-ghost {
-      background: transparent;
+      background: rgba(255, 255, 255, 0.08);
       color: var(--white);
       font-family: 'Montserrat', sans-serif;
       font-size: 0.5625rem;
       letter-spacing: 0.125rem;
       text-transform: uppercase;
+      font-weight: 700;
       padding: 0.8125rem 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.6);
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
     }
 
-    /* Indicateur "défiler" en bas du hero */
+    /* ── MODIFIÉ : "Défiler" positionné en absolu en bas du hero ── */
     .hero-scroll-hint {
+      position: absolute;
+      bottom: 1.125rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
       font-family: 'Lato', sans-serif;
       font-size: 0.5625rem;
       letter-spacing: 0.1875rem;
@@ -445,7 +471,10 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+      pointer-events: none;
+      white-space: nowrap;
     }
+
     .scroll-chevron {
       width: 10px; height: 10px;
       border-right: 1px solid rgba(255, 255, 255, 0.3);
@@ -953,7 +982,7 @@
       <div id="hero-img-overlay"></div>
     </div>
 
-    <!-- Texte hero -->
+    <!-- Texte hero — "Défiler" est sorti de ce bloc, voir ci-dessous -->
     <div id="hero-content">
       <p class="hero-eyebrow">Au pied de la Cathédrale Sainte-Cécile · Albi</p>
       <h1 class="hero-h1"><span class="super">Le</span> May Milton</h1>
@@ -967,11 +996,13 @@
         <a href="#reservation" class="btn-gold">Réserver une table</a>
         <a href="#formules"    class="btn-ghost">Découvrir le menu</a>
       </div>
-      <p class="hero-scroll-hint">
-        Défiler pour découvrir
-        <span class="scroll-chevron" aria-hidden="true"></span>
-      </p>
     </div>
+
+    <!-- Indicateur "Défiler" — positionné en bas du hero, hors du bloc centré -->
+    <p class="hero-scroll-hint" aria-hidden="true">
+      Défiler pour découvrir
+      <span class="scroll-chevron" aria-hidden="true"></span>
+    </p>
 
   </section>
 
